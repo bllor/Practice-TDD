@@ -1,4 +1,4 @@
-package phoenix.partyquest.repository.toyarticle;
+package phoenix.partyquest.domain.toyarticle.repository;
 
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.stereotype.Repository;

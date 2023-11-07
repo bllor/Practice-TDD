@@ -1,15 +1,12 @@
 package phoenix.partyquest.repository.toyarticle;
 
 import org.assertj.core.api.Assertions;
-import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
 import phoenix.partyquest.domain.toyarticle.ToyMember;
 import phoenix.partyquest.domain.toyarticle.ToyMemberRole;
-
-import static org.junit.jupiter.api.Assertions.*;
-
+import phoenix.partyquest.domain.toyarticle.repository.ToyMemberRepository;
 
 
 @SpringBootTest

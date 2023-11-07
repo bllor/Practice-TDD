@@ -1,4 +1,4 @@
-package phoenix.partyquest.service.ToyArticle;
+package phoenix.partyquest.domain.toyarticle.service.ToyArticle;
 
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
@@ -6,10 +6,11 @@ import org.springframework.stereotype.Service;
 import phoenix.partyquest.domain.toyarticle.ToyArticle;
 import phoenix.partyquest.domain.toyarticle.ToyMember;
 import phoenix.partyquest.domain.toyarticle.myexception.NoAuthenticatedException;
-import phoenix.partyquest.repository.toyarticle.ToyArticleRepository;
-import phoenix.partyquest.repository.toyarticle.ToyMemberRepository;
-import phoenix.partyquest.request.toy.ToyArticleRequest;
-import phoenix.partyquest.request.toy.ToyArticleUpdateRequest;
+import phoenix.partyquest.domain.toyarticle.repository.ToyArticleRepository;
+import phoenix.partyquest.domain.toyarticle.repository.ToyMemberRepository;
+import phoenix.partyquest.domain.toyarticle.request.toy.ToyArticleDeleteRequest;
+import phoenix.partyquest.domain.toyarticle.request.toy.ToyArticleRequest;
+import phoenix.partyquest.domain.toyarticle.request.toy.ToyArticleUpdateRequest;
 
 import java.util.List;
 
@@ -63,7 +64,15 @@ public class ToyArticleService {
     }
 
     }
-    public void deleteArticle(){}
+    public void deleteArticle(ToyArticleDeleteRequest deleteRequest){
+        ToyArticle selectedArticle = toyArticleRepository.findById(deleteRequest.getArticleId()).orElseThrow();
+        if(selectedArticle.getAuthor().getId().equals(deleteRequest.getAuthorId())){
+            toyArticleRepository.deleteById(deleteRequest.getArticleId());
+        }else{
+            throw new NoAuthenticatedException();
+        }
+
+    }
 
 
 }

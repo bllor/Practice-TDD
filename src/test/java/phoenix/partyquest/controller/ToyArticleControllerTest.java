@@ -5,16 +5,13 @@ import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
 import phoenix.partyquest.domain.toyarticle.ToyArticle;
-import phoenix.partyquest.domain.toyarticle.ToyMember;
-import phoenix.partyquest.repository.toyarticle.ToyArticleRepository;
-import phoenix.partyquest.repository.toyarticle.ToyMemberRepository;
-import phoenix.partyquest.request.toy.ToyArticleRequest;
-import phoenix.partyquest.request.toy.ToyArticleUpdateRequest;
-import phoenix.partyquest.service.ToyArticle.ToyArticleService;
+import phoenix.partyquest.domain.toyarticle.repository.ToyMemberRepository;
+import phoenix.partyquest.domain.toyarticle.request.toy.ToyArticleDeleteRequest;
+import phoenix.partyquest.domain.toyarticle.request.toy.ToyArticleRequest;
+import phoenix.partyquest.domain.toyarticle.request.toy.ToyArticleUpdateRequest;
+import phoenix.partyquest.domain.toyarticle.service.ToyArticle.ToyArticleService;
 
 import java.util.List;
-
-import static org.junit.jupiter.api.Assertions.*;
 
 @SpringBootTest
 class ToyArticleControllerTest {
@@ -57,6 +54,15 @@ class ToyArticleControllerTest {
         updateRequest.setAuthorId(Long.valueOf(102));//글쓴이 정보
 
         toyArticleService.updateArticle(updateRequest);
+
+    }
+
+    public void deleteArticle(){
+        ToyArticleDeleteRequest deleteRequest = new ToyArticleDeleteRequest();
+        deleteRequest.setArticleId(Long.valueOf(52));
+        deleteRequest.setAuthorId(Long.valueOf(2));
+
+        toyArticleService.deleteArticle(deleteRequest);
 
     }
 

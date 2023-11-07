@@ -8,16 +8,14 @@ import org.springframework.boot.test.context.SpringBootTest;
 import phoenix.partyquest.domain.toyarticle.ToyArticle;
 import phoenix.partyquest.domain.toyarticle.ToyMember;
 import phoenix.partyquest.domain.toyarticle.myexception.NoAuthenticatedException;
-import phoenix.partyquest.repository.toyarticle.ToyArticleRepository;
-import phoenix.partyquest.repository.toyarticle.ToyMemberRepository;
-import phoenix.partyquest.request.toy.ToyArticleDeleteRequest;
-import phoenix.partyquest.request.toy.ToyArticleRequest;
-import phoenix.partyquest.request.toy.ToyArticleUpdateRequest;
+import phoenix.partyquest.domain.toyarticle.repository.ToyArticleRepository;
+import phoenix.partyquest.domain.toyarticle.repository.ToyMemberRepository;
+import phoenix.partyquest.domain.toyarticle.request.toy.ToyArticleDeleteRequest;
+import phoenix.partyquest.domain.toyarticle.request.toy.ToyArticleRequest;
+import phoenix.partyquest.domain.toyarticle.request.toy.ToyArticleUpdateRequest;
 
 import java.util.Arrays;
 import java.util.List;
-
-import static org.junit.jupiter.api.Assertions.*;
 
 
 @SpringBootTest

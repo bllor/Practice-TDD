@@ -6,7 +6,7 @@ import org.springframework.security.core.userdetails.UserDetailsService;
 import org.springframework.security.core.userdetails.UsernameNotFoundException;
 import org.springframework.stereotype.Service;
 import phoenix.partyquest.domain.toyarticle.ToyMember;
-import phoenix.partyquest.repository.toyarticle.ToyMemberRepository;
+import phoenix.partyquest.domain.toyarticle.repository.ToyMemberRepository;
 
 @Service
 @RequiredArgsConstructor

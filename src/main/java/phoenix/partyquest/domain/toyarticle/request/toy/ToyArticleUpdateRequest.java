@@ -1,4 +1,4 @@
-package phoenix.partyquest.request.toy;
+package phoenix.partyquest.domain.toyarticle.request.toy;
 
 
 import lombok.*;
